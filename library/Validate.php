@@ -78,14 +78,23 @@ class Validate {
         //$value = intval($value);
         if (preg_match('/^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$/',$value, $match)){
             $d = intval($match[1]);
-            if ($d < 10){
-                return "Некорректно заполнено поле.";
+            if (checkdate($match[2],$match[1],$match[3])){
+                $valueUnix = strtotime($value);
+                $currentDate = time();
+
+                if ($currentDate > $valueUnix) {
+                    echo "Должна быть задана еще не прошедшая дата.";
+                } else {
+                    return true;
+                }
+            } else{
+                return "Некорректная дата.";
             }
 
-            print_r($match);
+
             return true;
         } else {
-            return "Некорректно заполнено поле.";
+            return "Некорректно заполнено поле. Введите дату в формате DD-MM-YYYY";
         }
     }
 
@@ -108,6 +117,10 @@ class Validate {
                 $value = strtoupper($value);
                 break;
             case "Date":
+                preg_match('/^([0-9]{1,2})-([0-9]{1,2})-([0-9]{4})$/',$value, $match);
+                $value = (intval($match[1]) < 10 ? "0" : "").$match[1]."-"
+                    .(intval($match[2]) < 10 ? "0" : "").$match[2]."-"
+                    .$match[3];
                 //$value = trim($value);
                 //$value = preg_replace('/\s/','',$value);
                 //$value = strtoupper($value);

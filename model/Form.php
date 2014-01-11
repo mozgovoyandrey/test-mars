@@ -45,4 +45,16 @@ class FormModel extends Model {
         $this->data['lines'] = $lines;
         return $this->data;
     }
+
+    public function getXMLdata(){
+        $xml = array();
+
+        if ($this->config->formFields){
+            foreach($this->config->formFields AS $key => $field){
+                $xml[$field['name']] = $field['value'];
+            }
+        }
+
+        return $xml;
+    }
 } 

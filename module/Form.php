@@ -48,6 +48,8 @@ class Form extends Module{
         $data = $this->model->show_form();
         $content = new View($tmpl, $data);
 
+
+
         $this->mars->viewData["content"] = $content;
     }
 
@@ -55,12 +57,16 @@ class Form extends Module{
 
         include_once "model/Form.php";
         $this->model  = new FormModel($this->mars, $this->config);
-//
+
         $tmpl = file_get_contents("views/form/form_submit.php");
-//
+
         $data = $this->model->show_form();
         $content = new View($tmpl, $data);
-//
+
+        $xml = new XML($data);
+        $xml->saveXML("xml/".time().".xml");
+
         $this->mars->viewData["content"] = $content;
     }
+
 } 
