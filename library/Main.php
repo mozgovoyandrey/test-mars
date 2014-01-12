@@ -2,19 +2,18 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 01.01.14
- * Time: 23:53
+ *
+ * Основной модуль программы
  */
 
 class Main {
 
     public $mars;
 
-
-
     public function Main(){
         $this->mars = new Mars();
         $this->mars->config = new Config();
+        return true;
     }
 
     public function run(){
@@ -23,18 +22,23 @@ class Main {
         $this->mars->viewData = $this->setDefaultViewData();
 
         include "module/".ucfirst($this->mars->urldata['module']).".php";
-        ////$mmm = new Form()
+
         $module_name = ucfirst($this->mars->urldata['module']);
-        //eval('$module =  new '.ucfirst($this->mars->urldata['module']).'($this->mars);');
+
         $module =  new $module_name($this->mars);
 
         $this->mars = $module->getResult();
 
         $this->render();
+
+        return true;
     }
 
+    /**
+     * Обрабатывает данные из URL
+     */
     public function urlManager(){
-        if ($_GET['module']){
+        if ($_GET['module'] && preg_match('/^[a-z]*$/',$_GET['module'])){
             $this->mars->urldata['module'] = $_GET['module'];
         }
         if ($_POST || $_POST['post'] == true){
@@ -51,6 +55,7 @@ class Main {
         $view = new View($tmpl_main, $this->mars->viewData);
 
         echo $view->render();
+        return true;
     }
 
     /**

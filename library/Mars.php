@@ -2,8 +2,8 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 02.01.14
- * Time: 14:15
+ *
+ * Модуль для сбора результирующих данныч
  */
 
 class Mars {

@@ -2,15 +2,19 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 11.01.14
- * Time: 20:35
+ *
+ * Используется для формирования и сохранения данных в XML формате
  */
 
 class XML {
 
     public $xml;
 
+    public $data;
+
     public function XML($data){
+        $this->data = $data;
+
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';
 
         $xml .= '<data>';

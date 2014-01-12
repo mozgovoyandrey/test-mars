@@ -2,8 +2,7 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 11.01.14
- * Time: 3:18
+ * Модель Form
  */
 
 class FormModel extends Model {
@@ -14,6 +13,10 @@ class FormModel extends Model {
         $this->data = array();
     }
 
+    /**
+     * Формирует данные для отображения формы
+     * @return array
+     */
     public function show_form(){
 
         $this->data['buttonName'] = $this->config->formBtnSubmitName;
@@ -46,6 +49,11 @@ class FormModel extends Model {
         return $this->data;
     }
 
+
+    /**
+     * Формирует данные для преобразования в XML
+     * @return array
+     */
     public function getXMLdata(){
         $xml = array();
 
@@ -54,7 +62,6 @@ class FormModel extends Model {
                 $xml[$field['name']] = $field['value'];
             }
         }
-
         return $xml;
     }
 } 

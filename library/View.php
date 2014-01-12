@@ -2,8 +2,8 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 11.01.14
- * Time: 1:50
+ *
+ * Объект для компоновки данных
  */
 
 class View {
@@ -13,11 +13,10 @@ class View {
     public $noOne;
 
     public $data;
+
     public $dataEmpty;
 
     /**
-     * Объект для компоновки данных
-     *
      * @param string $tmpl Шаблон данных (HTML код)
      * @param array $data Данные для подстановки
      * @param bool $noOne TRUE если требуется вывести несколько копий объекта с различными данными
@@ -33,13 +32,8 @@ class View {
             $this->dataEmpty[$key] = "";
         }
         $this->data = $data;
-//        if ($noOne){
-//            foreach($data AS $key => $value){
-//                $this->data[$key] = $value;
-//            }
-//        } else {
-//            dataEmpty
-//        }
+
+        return true;
     }
 
     /**
@@ -68,7 +62,6 @@ class View {
      */
     public function renderCopy($data){
         $copy = $this->tmpl;
-//        print_r($data);
         foreach ($data AS $key => $val){
             if (is_object($val)){
                 $copy = preg_replace('/\[%'.$key.'%\]/', $val->render(), $copy);

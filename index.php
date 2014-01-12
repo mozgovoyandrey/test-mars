@@ -2,8 +2,7 @@
 /**
  * Created by MOZGOVOY.NET
  * User: Mozgovoy Andrey
- * Date: 01.01.14
- * Time: 23:00
+ *
  */
 
 include_once "Config.php";

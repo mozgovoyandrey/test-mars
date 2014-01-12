@@ -1,14 +1,16 @@
+html {
+    height:100%;
+}
 body {
+    height:auto !important;
+    height:100%;
+    min-height:100%;
     padding: 0px;
     margin: 0px;
     background-color: #cecece;
 }
-body {}
 .maincol {
-    /* width: 940px; */
     padding: 10px;
-    /* margin: 0px auto; */
-    /* height: 100%; */
 }
 .logo a {
     text-decoration: none;
@@ -22,10 +24,14 @@ body {}
     font-weight: bold;
 }
 .wrap {
-    width: 940px;  margin: 0px auto;  height: 100%;
+    width: 940px;
+    margin: 0px auto;
     background: #F1F1F1;
     border-left: 5px solid #C0C0C0;
     border-right: 5px solid #C0C0C0;
+    height:auto !important;
+    height:100%;
+    min-height:100%;
 }
 .header {
     height: 100px;
