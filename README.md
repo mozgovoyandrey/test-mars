@@ -6,7 +6,7 @@ test-mars
 
 
 Работающее приложение
-[http://test.mozgovoy.net/](http://test-mars.mozgovoy.net/ "Тестовое задание Банк Первомайский")
+[http://test-mars.mozgovoy.net/](http://test-mars.mozgovoy.net/ "Тестовое задание Банк Первомайский")
 
 Автор : **Мозговой Андрей**
 [http://mozgovoy.net/](http://mozgovoy.net/ "Мозговой Андрей")
