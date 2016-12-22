@@ -14,7 +14,7 @@ class Config {
     // Название сайта
     public $defaultSiteName = "Mars Repair";
 
-    public function Config (){
+    public function __construct() {
         return true;
     }
 
