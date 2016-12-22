@@ -7,7 +7,7 @@
 
 class FormModel extends Model {
 
-    public function FormModel($mars, $config = array()){
+    public function __construct($mars, $config = array()){
         $this->mars = $mars;
         $this->config = $config;
         $this->data = array();

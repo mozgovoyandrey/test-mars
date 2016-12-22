@@ -7,7 +7,7 @@
 
 class Form extends Module{
 
-    public function Form($mars){
+    public function __construct($mars){
         $this->mars = $mars;
         include_once "config/Form.php";
         $this->config  = new FormConfig();

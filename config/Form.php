@@ -13,13 +13,13 @@ class FormConfig {
     // Название кнопки Submit
     public $formBtnSubmitName = "Отправить заявку";
 
-    public function FormConfig(){
-        $this->addFormField("lastname", "Фамилия", "text", "FIO", "", true);
-        $this->addFormField("firstname", "Имя", "text", "FIO", "", true);
-        $this->addFormField("nlonumber", "Номер летающей тарелки", "text", "NLOnum", "", true);
-        $this->addFormField("daterepair", "Дата ремонта", "text", "Date", date("d-m-Y", strtotime('+1 day')), true);
-        $this->addFormField("phonenumber", "Телекоммуникационный номер", "text", "PhoneNumber", "", true);
-        $this->addFormField("comment", "Комментарий", "textbox", "Comment", "");
+    public function __construct(){
+        $this->addFormField("lastname",     "Фамилия",                  "text", "FIO", "", true);
+        $this->addFormField("firstname",    "Имя",                      "text", "FIO", "", true);
+        $this->addFormField("nlonumber",    "Номер летающей тарелки",   "text", "NLOnum", "", true);
+        $this->addFormField("daterepair",   "Дата ремонта",             "text", "Date", date("d-m-Y", strtotime('+1 day')), true);
+        $this->addFormField("phonenumber",  "Телекоммуникационный номер", "text",   "PhoneNumber", "", true);
+        $this->addFormField("comment",      "Комментарий",              "textbox",  "Comment", "");
     }
 
     /**

@@ -12,7 +12,7 @@ class Validate {
 
     public $errors = false;
 
-    public function Validate($config){
+    public function __construct($config){
 
         $this->config = $config;
 

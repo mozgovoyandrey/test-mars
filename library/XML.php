@@ -12,7 +12,7 @@ class XML {
 
     public $data;
 
-    public function XML($data){
+    public function __construct($data){
         $this->data = $data;
 
         $xml = '<?xml version="1.0" encoding="UTF-8"?>';

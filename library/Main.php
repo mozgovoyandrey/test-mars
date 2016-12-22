@@ -10,7 +10,7 @@ class Main {
 
     public $mars;
 
-    public function Main(){
+    public function __construct(){
         $this->mars = new Mars();
         $this->mars->config = new Config();
         return true;

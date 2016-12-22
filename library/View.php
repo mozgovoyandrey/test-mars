@@ -21,7 +21,7 @@ class View {
      * @param array $data Данные для подстановки
      * @param bool $noOne TRUE если требуется вывести несколько копий объекта с различными данными
      */
-    public function View($tmpl = "", $data = array(), $noOne = false){
+    public function __construct($tmpl = "", $data = array(), $noOne = false){
 
         $this->tmpl = $tmpl;
         $this->noOne = $noOne;
